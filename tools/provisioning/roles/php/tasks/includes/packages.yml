@@ -1,0 +1,7 @@
+---
+- name: ensure PHP apt packages are installed
+  apt:
+    pkg={{ item }}
+    state=latest
+  with_items: "{{ php_apt_packages }}"
+  when: php_apt_packages is defined

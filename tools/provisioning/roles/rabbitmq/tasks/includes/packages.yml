@@ -1,0 +1,20 @@
+---
+- name: ensure rabbitmq apt source is added add RabbitMQ apt source
+  apt_repository: repo='deb http://www.rabbitmq.com/debian/ testing main' state=present
+
+- name: ensure rabbitmq apt key is available
+  apt_key:
+    url=http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+    state=present
+
+- name: ensure apt cache is up to date
+  apt:
+    update_cache=true
+
+- name: ensure rabbitmq apt packages are installed
+  apt:
+    name={{ item }}
+    state=latest
+    allow_unauthenticated=yes
+  with_items: "{{ rabbitmq_apt_packages }}"
+  when: rabbitmq_apt_packages is defined

@@ -1,0 +1,15 @@
+---
+- name: ensure composer temp directory is available
+  file:
+    path={{ php_composer_tmp_dir }}/composer
+    state=directory
+    owner=root
+    group=root
+
+- name: ensure composer installer is downloaded
+  get_url:
+    url=https://getcomposer.org/installer
+    dest={{ php_composer_tmp_dir }}/composer/installer
+
+- name: ensure php installer is executed
+  command: "php -f {{ php_composer_tmp_dir }}/composer/installer -- --filename=composer --install-dir=/usr/local/bin"

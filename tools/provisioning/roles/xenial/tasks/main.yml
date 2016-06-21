@@ -1,0 +1,5 @@
+- name: ensure apt-get is updated
+  raw: apt-get update -qq
+
+- name: ensure python2.7 is installed
+  raw: apt-get install -qq python2.7

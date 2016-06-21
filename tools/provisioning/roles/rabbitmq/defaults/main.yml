@@ -1,0 +1,4 @@
+---
+rabbitmq_hostname: localhost
+rabbitmq_plugins:
+  - { name: rabbitmq_management }

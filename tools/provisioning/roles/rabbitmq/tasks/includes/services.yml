@@ -1,0 +1,6 @@
+---
+- name: ensure rabbitmq-server starts on a fresh reboot
+  service:
+    name=rabbitmq-server
+    enabled=yes
+    state=started

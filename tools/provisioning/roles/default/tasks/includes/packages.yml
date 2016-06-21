@@ -1,0 +1,12 @@
+---
+- name: updates apt cache
+  apt:
+    update_cache=yes
+    cache_valid_time=86400
+
+- name: install apt packages
+  apt:
+    name={{ item }}
+    state=latest
+  with_items: "{{ default_apt_packages }}"
+  when: default_apt_packages is defined

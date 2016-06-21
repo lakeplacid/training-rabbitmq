@@ -1,0 +1,3 @@
+---
+rabbitmq_apt_packages:
+  - rabbitmq-server

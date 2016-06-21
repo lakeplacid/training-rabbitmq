@@ -1,0 +1,14 @@
+- hosts: default
+  become: true
+  gather_facts: false
+  roles:
+    - xenial
+
+- hosts: default
+  become: true
+  vars:
+    ansible_python_interpreter: /usr/bin/python2.7 
+  roles:
+    - default
+    - php
+    - rabbitmq

@@ -1,0 +1,14 @@
+default_apt_packages:
+  - autoconf
+  - automake
+  - build-essential
+  - git
+  - htop
+  - iotop
+  - libtool
+  - mc
+  - python-pip
+  - screen
+  - software-properties-common
+  - strace
+  - zip
