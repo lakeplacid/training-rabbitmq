@@ -17,6 +17,7 @@ Non-technical details:
 - User may follow other users
 - User may publish a message with single string
 - Message publishing must be fast, because single user may be followed by 1.000.000 of other users
+- Every publish action should be logged
 
 Technical details:
   
